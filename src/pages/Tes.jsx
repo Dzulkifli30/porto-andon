@@ -1,41 +1,70 @@
-import { ArrowUpRightIcon } from '@heroicons/react/24/outline';
-import photoPreview from '/imersive.png';
-import videoPreview from '/imersive.png';
-import animPreview from '/imersive.png';
+// File: Tes.jsx (Diperbarui)
 
-const services = [
-  { title: 'Photography', image: photoPreview, bg: 'bg-teal-500', accent: 'bg-teal-700' },
-  { title: 'Videography', image: videoPreview, bg: 'bg-teal-500', accent: 'bg-teal-700' },
-  { title: 'Animation', image: animPreview, bg: 'bg-orange-500', accent: 'bg-orange-600' },
-];
+import React from 'react';
+import '../style.css';
 
-export default function ServiceCards() {
+export default function Tes() {
+  // 1. Buat objek style untuk clip-path di sini
+  const blobSectionStyle = {
+    clipPath: 'url(#blobShape)',
+  };
+
   return (
-    <div className="grid grid-cols-1 md:grid-cols-3 gap-6 p-6 bg-gradient-to-br from-teal-300 to-green-400 min-h-screen">
-      {services.map((item, i) => (
-        <div
-          key={i}
-          className={`relative rounded-[30px] overflow-hidden p-4 pb-6 ${item.bg} text-white shadow-lg group transition-transform hover:scale-105`}
-        >
-          <h2 className="text-xl font-semibold mb-4">{item.title}</h2>
+    <div className="app-container">
+      {/* SVG untuk mendefinisikan bentuk blob (tidak berubah) */}
+      <svg width="0" height="0">
+        <defs>
+          <clipPath id="blobShape" clipPathUnits="objectBoundingBox">
+            <path d="M0,0 H1 V0.85 C0.75,1 0.25,1 0,0.85 Z" />
+          </clipPath>
+        </defs>
+      </svg>
 
-          {/* Gambar preview */}
-          <div className="bg-white/70 p-1 rounded-[25px] overflow-hidden">
-            <img
-              src={item.image}
-              alt={item.title}
-              className="rounded-[20px] object-cover w-full h-[160px]"
-            />
-          </div>
-
-          {/* Tombol Icon Panah */}
-          <div
-            className={`absolute bottom-4 right-4 w-12 h-12 rounded-full ${item.accent} flex items-center justify-center`}
-          >
-            <ArrowUpRightIcon className="w-6 h-6 text-white" />
-          </div>
+      {/* Bagian Atas (Hijau dengan bentuk blob) */}
+      {/* 2. Terapkan style object di sini menggunakan atribut 'style' */}
+      <section className="top-section-blob" style={blobSectionStyle}>
+        <h1 className="title">MY PROJECT</h1>
+        <div className="projects-grid">
+          <div className="project-card">Photography</div>
+          <div className="project-card">Videography</div>
+          <div className="project-card">Animation</div>
         </div>
-      ))}
+      </section>
+
+      {/* Bagian Bawah (Konten) */}
+      <section className="bottom-section">
+        <div className="contact-info">
+          <h4>PUTRA ANDONI</h4>
+          <p>
+            <strong>Contact Me At</strong>
+            <br />
+            putraandoni22@gmail.com
+            <br />
+            Dsn. Keboh RT.3 RW.1
+            <br />
+            Ds. Kebonsari Kec. Sukodadi
+            <br />
+            Lamongan
+          </p>
+        </div>
+        <div className="links">
+          <h4>Tautan</h4>
+          <p>
+            Home
+            <br />
+            About
+            <br />
+            Project
+            <br />
+            Contact
+          </p>
+        </div>
+      </section>
+      
+      <footer className="footer">
+        <p>"Less flair, more achievements."</p>
+        <p>@Copyright2024</p>
+      </footer>
     </div>
   );
 }
