@@ -199,7 +199,7 @@ export default function Home() {
             {services.map((item, i) => (
               <div
                 key={i}
-                className="relative rounded-[30px] overflow-hidden bg-[#686868] bg-opacity-20 text-white shadow-lg group transition-transform hover:bg-primary border-white border"
+                className="cursor-pointer relative rounded-[30px] overflow-hidden bg-[#686868] bg-opacity-20 text-white shadow-lg group transition-transform hover:bg-primary border-white border"
               >
                 {/* Header */}
                 <div className="p-8 border-b border-[#F9FAFB]/30">
@@ -216,7 +216,7 @@ export default function Home() {
                 </div>
 
                 {/* Tombol Icon Panah */}
-                <div className="absolute bottom-0 right-0 w-12 h-12 rounded-full bg-gray-800 flex items-center justify-center">
+                <div className="absolute bottom-3 right-3 w-12 h-12 rounded-full bg-gray-800 flex items-center justify-center">
                   <ArrowUpRightIcon className="w-6 h-6 text-white" />
                 </div>
               </div>
